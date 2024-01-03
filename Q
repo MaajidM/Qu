@@ -1,0 +1,124 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qur'an Juz per Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        select {
+            margin: 20px;
+            padding: 10px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Qur'an Juz per Day</h1>
+        <label for="daySelect">Select Day:</label>
+      <select id="daySelect" onchange="displaySurahs()">
+    <option value="1st">1st Day - Al-Baqarah</option>
+    <option value="2nd">2nd Day - Āle Imrān</option>
+    <option value="3rd">3rd Day - Al-Nisā’</option>
+    <option value="4th">4th Day - Al-Māidah</option>
+    <option value="5th">5th Day - Al-An’ām</option>
+    <option value="6th">6th Day - Al-A’rāf</option>
+    <option value="7th">7th Day - Al-Anfāl & Al-Taubah</option>
+    <option value="8th">8th Day - Yūnus & Hūd</option>
+    <option value="9th">9th Day - Yūsuf & Al-Ra’d</option>
+    <option value="10th">10th Day - Ibrahīm & Al-Hijr</option>
+    <option value="11th">11th Day - Al-Nahl</option>
+    <option value="12th">12th Day - Al-Isrā & Al-Kahf</option>
+    <option value="13th">13th Day - Maryam & Tā Hā</option>
+    <option value="14th">14th Day - Al-Anbiyā’ & Al-Hajj</option>
+    <option value="15th">15th Day - Al-Mu’minūn & Al-Nūr</option>
+    <option value="16th">16th Day - Al-Furqān & Al-Shu’ara</option>
+    <option value="17th">17th Day - Al-Naml, Al-Qasas & Al-Ankabūt</option>
+    <option value="18th">18th Day - Al-Rūm, Luqmān, Al-Sajdah & Al-Ahzāb</option>
+    <option value="19th">19th Day - Saba’, Al-Fātir, Yā Sīn & Al-Sāfāt</option>
+    <option value="20th">20th Day - Sād, Al-Zumar & Ghāfir</option>
+    <option value="21st">21st Day - Fussilāt, Al-Shurā, Al-Zukhruf & Al-Dukhān</option>
+    <option value="22nd">22nd Day - Al-Jāthiyah, Al-Ahqāf, Muhammad, Al-Fath & Al-Hujurāt</option>
+    <option value="23rd">23rd Day - Qāf, Al-Dhāriyāt, At-Ţūr, An-Najm & Al-Qamar</option>
+    <option value="24th">24th Day - Al-Rahmān, Al-Wāqi‘ah, Al-Hadīd & Al-Mujādilah</option>
+    <option value="25th">25th Day - Al-Hashr to Al-Qalam</option>
+    <option value="26th">26th Day - Al-Hāqqah to Al-Muddaththir</option>
+    <option value="27th">27th Day - Al-Qiyāmah to An-Nāzi‘āt</option>
+    <option value="28th">28th Day - ‘Abasa to Al-Ghāshiyah</option>
+    <option value="29th">29th Day - Al-Fajr to Al-Qadr</option>
+    <option value="30th">30th Day - Al-Bayyinah, Az-Zalzalah, Al-‘Ādiyāt, Al-Qāriah, At-Takāthur, Al-‘Asr, Al-Humazah, Al-Fīl, Quraysh, Al-Mā‘ūn, Al-Kauthar, Al-Kāfirūn, An-Nasr, Al-Masad, Al-Ikhlās, Al-Falaq, An-Nās
+
+</option>
+</select>
+
+
+        <p id="surahDisplay"></p>
+    </div>
+
+    <script>
+    function displaySurahs() {
+        var surahs = {
+            "1st": "Al-Baqarah - 286 verses",
+            "2nd": "Āle Imrān - 200 verses",
+            "3rd": "Al-Nisā’ - 177 verses",
+            "4th": "Al-Māidah - 120 verses",
+            "5th": "Al-An’ām - 166 verses",
+            "6th": "Al-A’rāf - 206 verses",
+            "7th": "Al-Anfāl (75), Al-Taubah (129) - Total 204 verses",
+            "8th": "Yūnus (109), Hūd (123) - Total 232 verses",
+            "9th": "Yūsuf (111), Al-Ra’d (43) - Total 154 verses",
+            "10th": "Ibrahīm (52), Al-Hijr (99) - Total 151 verses",
+            "11th": "Al-Nahl - 128 verses",
+            "12th": "Al-Isrā (111), Al-Kahf (110) - Total 221 verses",
+            "13th": "Maryam (98), Tā Hā (135) - Total 233 verses",
+            "14th": "Al-Anbiyā’ (112), Al-Hajj (78) - Total 190 verses",
+            "15th": "Al-Mu’minūn (118), Al-Nūr (64) - Total 182 verses",
+            "16th": "Al-Furqān (77), Al-Shu’ara (227) - Total 304 verses",
+            "17th": "Al-Naml (93), Al-Qasas (88), Al-Ankabūt (69) - Total 250 verses",
+            "18th": "Al-Rūm (60), Luqmān (34), Al-Sajdah (30), Al-Ahzāb (73) - Total 197 verses",
+            "19th": "Saba’ (54), Al-Fātir (45), Yā Sīn (83), Al-Sāfāt (182) - Total 364 verses",
+            "20th": "Sād (88), Al-Zumar (75), Ghāfir (85) - Total 248 verses",
+            "21st": "Fussilāt (54), Al-Shurā (53), Al-Zukhruf (89), Al-Dukhān (59) - Total 255 verses",
+            "22nd": "Al-Jāthiyah (37), Al-Ahqāf (35), Muhammad (38), Al-Fath (29), Al-Hujurāt (18) - Total 157 verses",
+            "23rd": "Qāf (45), Al-Dhāriyāt (60), At-Ţūr (49), An-Najm (62), Al-Qamar (55) - Total 271 verses",
+            "24th": "Al-Rahmān (78), Al-Wāqi‘ah (96), Al-Hadīd (29), Al-Mujādilah (22) - Total 225 verses",
+            "25th": "Al-Hashr to Al-Qalam - Specific verse counts not provided",
+            "26th": "Al-Hāqqah to Al-Muddaththir - Specific verse counts not provided",
+            "27th": "Al-Qiyāmah to An-Nāzi‘āt - Specific verse counts not provided",
+            "28th": "‘Abasa to Al-Ghāshiyah - Specific verse counts not provided",
+            "29th": "Al-Fajr to Al-Qadr - Specific verse counts not provided",
+            "30th": "Al-Bayyinah (8), Az-Zalzalah (8), Al-‘Ādiyāt (11), Al-Qāriah (11), At-Takāthur (8), Al-‘Asr (3), Al-Humazah (9), Al-Fīl (5), Quraysh (4), Al-Mā‘ūn (7), Al-Kauthar (3), Al-Kāfirūn (6), An-Nasr (3), Al-Masad (5), Al-Ikhlās (4), Al-Falaq (5), An-Nās (6)"
+        };
+
+        var selectedDay = document.getElementById("daySelect").value;
+        document.getElementById("surahDisplay").innerHTML = surahs[selectedDay];
+    }
+</script>
+
+</body>
+</html>
+
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
